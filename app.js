@@ -10,7 +10,22 @@ createApp({
     },
     methods:{
         newTask(){
-            this.newToDo
+
+            console.log(this.newToDo)
+            
+            $data = {
+                todo: this.newToDo
+            }
+            axios
+            .post('./server.php', $data, {
+                headers: {
+                    'Content-Type': 'multipart/form-data',
+                },
+            })
+            .then(res => {
+                this.toDo = res.data
+                this.newToDo = ''
+            })
         },
         fetchTodoList(){
             axios

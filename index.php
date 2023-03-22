@@ -18,10 +18,10 @@
             </div>
             <div class="container mt-5">
                 <ul class="list-group">
-                    <li @keyup.enter="newTask" v-model="newToDo" v-for="toDo in toDo" :key="toDo" class="list-group-item">{{toDo}}</li>
+                    <li v-for="toDo in toDo" :key="toDo" class="list-group-item">{{toDo}}</li>
                 </ul>
 
-                <input class="form-control mt-4" type="text" name="todo" placeholder="New ToDo" aria-label="default input example">
+                <input @keyup.enter="newTask" v-model="newToDo" class="form-control mt-4" type="text" name="todo" placeholder="New ToDo" aria-label="default input example">
             </div>
         </section>
     </div>
